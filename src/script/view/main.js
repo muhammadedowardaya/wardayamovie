@@ -87,9 +87,7 @@ const main = () => {
                         }else if(response.data.results[1] !== undefined){
                             item.children[2].setAttribute('href', `https://www.youtube.com/embed/${response.data.results[1].key}`);
                         }
-                        // console.info(response.data.results[0]);
                     })
-                    // console.info(responseJson);
                     item.children[2].addEventListener('click',  e => {
                         const watch = document.querySelector('movie-trailer');
                         watch.urlVideo = item.children[2].getAttribute('href');
