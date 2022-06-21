@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wardaya</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <header class="mt-5 pt-5">
+                    <nav-bar></nav-bar>
+                </header>
+                <div class="jumbotron">
+                    <div class="container">
+                        <h1><strong>Recomended</strong> to you</h1>
+                        <!-- Slideshow container -->
+                        <div class="slideshow-container">
+                            <!-- Full-width images with number and caption text -->
+                            <div class="mySlides fade">
+                                <img src="" class="slideImage">
+                                <div class="text">Caption Text</div>
+                                <a href="#" class="slideBtnWatch">Watch Movie Trailer</a>
+                            </div>
+
+                            <div class="mySlides fade">
+                                <img src="" class="slideImage">
+                                <div class="text">Caption Two</div>
+                                <a href="#" class="slideBtnWatch">Watch Movie Trailer</a>
+                            </div>
+
+                            <div class="mySlides fade">
+                                <img src="" class="slideImage">
+                                <div class="text">Caption Three</div>
+                                <a href="#" class="slideBtnWatch">Watch Movie Trailer</a>
+                            </div>
+
+                            <div class="mySlides fade">
+                                <img src="" class="slideImage">
+                                <div class="text">Caption Three</div>
+                                <a href="#" class="slideBtnWatch">Watch Movie Trailer</a>
+                            </div>
+
+                            <div class="mySlides fade">
+                                <!-- <div class="numbertext">3 / 3</div> -->
+                                <img src="" class="slideImage">
+                                <div class="text">Caption Three</div>
+                                <a href="#" class="slideBtnWatch">Watch Movie Trailer</a>
+                            </div>
+
+                            <!-- Next and previous buttons -->
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                        </div>
+                        <br>
+                        <!-- The dots/circles -->
+                        <div style="text-align:center" id="spanDot">
+                            <!-- <span class="dot" onclick="currentSlide(1)"></span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="container">
+                    <main>
+                        <div class="row" id="trending">
+                            <h2 class="mb-5 mt-2">Most Trending</h2>
+                        </div>
+                        <div class="row" id="upcoming">
+                            <h2 class="mb-5 mt-2">Upcoming</h2>
+                        </div>
+                        <div class="row" id="popular">
+                            <h2 class="mb-5 mt-2">Popular</h2>
+                        </div>
+                        <div class="row" id="top_rated">
+                            <h2 class="mb-5 mt-2">Top Rated</h2>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+        <movie-trailer></movie-trailer>
+    </div>
+    <footer>
+        <p>Muhammad Edo Wardaya &#169; 2022, Junior Front End Developer</p>
+    </footer>
+</body>
+
+</html>
