@@ -6,7 +6,7 @@ const axios = require('axios').default;
 
 const navLink = document.querySelectorAll('.nav-link');
 
-function hapusActive() {
+const hapusActive = () => {
     for (const list of navLink) {
         if (list.classList.contains('active')) {
             list.classList.remove('active');
@@ -48,12 +48,12 @@ const main = () => {
         movie.overview = `${responseJson.data.results[index].overview}`;
         movie.click = function (e) {
             e.preventDefault();
-            axios.get(link).then(function(response){
+            axios.get(link).then(response =>{
                 const movieTrailer = document.querySelector('movie-trailer');
                 movieTrailer.urlVideo = `https://www.youtube.com/embed/${response.data.results[0].key}?controls=1`;
                 movieTrailer.overview = movie.overview;
                 movieTrailer.display = 'flex';
-                movieTrailer.clickClose = function (e) {
+                movieTrailer.clickClose =  (e) => {
                     e.preventDefault();
                     movieTrailer.display = 'none';
                 }
@@ -70,7 +70,7 @@ const main = () => {
     }
 
     axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=9171a762f85a9876cd40e0eef5a08a83&page=2&language=en-Us`)
-        .then(function(responseJson){
+        .then(responseJson => {
             if (responseJson.error) {
                 alert(responseJson.message);
             } else {
@@ -81,16 +81,21 @@ const main = () => {
                     item.children[1].textContent = `${responseJson.data.results[index].original_title}`;
 
                     const urlVideo = `https://api.themoviedb.org/3/movie/${responseJson.data.results[index].id}/videos?api_key=9171a762f85a9876cd40e0eef5a08a83`;
-                    axios.get(`${urlVideo}`).then(function(response){
-                        item.children[2].setAttribute('href', `https://www.youtube.com/embed/${response.results[0].key}`);
+                    axios.get(urlVideo).then( response => {
+                        if(response.data.results[0] !== undefined){
+                            item.children[2].setAttribute('href', `https://www.youtube.com/embed/${response.data.results[0].key}`);
+                        }else if(response.data.results[1] !== undefined){
+                            item.children[2].setAttribute('href', `https://www.youtube.com/embed/${response.data.results[1].key}`);
+                        }
+                        // console.info(response.data.results[0]);
                     })
-
-                    item.children[2].addEventListener('click', function (e) {
+                    // console.info(responseJson);
+                    item.children[2].addEventListener('click',  e => {
                         const watch = document.querySelector('movie-trailer');
                         watch.urlVideo = item.children[2].getAttribute('href');
                         watch.overview = `${responseJson.data.results[index].overview}`
                         watch.display = 'flex';
-                        watch.clickClose = function (e) {
+                        watch.clickClose = e => {
                             e.preventDefault();
                             watch.display = 'none';
                         }
@@ -100,15 +105,20 @@ const main = () => {
                 })
 
             }
+        }).catch(error => {
+            console.info(error);
         })
 
     const getUrlMovie = (url, containerId) => {
         axios.get(url)
-            .then(function(responseJson){
+            .then(responseJson => {
                 responseJson.data.results.forEach((item, index) => {
                     renderCardMovie(responseJson, index, containerId);
                 })
+            }).catch(error => {
+                console.info(error);
             })
+            
     }
 
     getUrlMovie(`https://api.themoviedb.org/3/trending/movie/day?api_key=9171a762f85a9876cd40e0eef5a08a83&language=en-US`, '#trending');

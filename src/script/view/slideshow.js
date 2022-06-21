@@ -11,30 +11,28 @@ slidesItem.forEach((item, index) => {
     spanContainer.appendChild(span);
 })
 
-showSlides(slideIndex);
-
 // Next/previous controls
 const prev = document.querySelector('.prev');
-prev.addEventListener('click',function(){
+prev.addEventListener('click', () =>{
     plusSlides(-1);
 })
 
 const next = document.querySelector('.next');
-next.addEventListener('click',function(){
+next.addEventListener('click', () => {
     plusSlides(1);
 })
 
-function plusSlides(n) {
+const plusSlides = n => {
     showSlides(slideIndex += n);
 }
 
 // Thumbnail image controls
-function currentSlide(n) {
+const currentSlide = n => {
     showSlides(slideIndex = n);
 }
 
 
-function showSlides(n) {
+const showSlides = n => {
     let i;
     let slides = document.querySelectorAll(".mySlides");
     let dots = document.querySelectorAll("span.dot");
@@ -59,5 +57,6 @@ function showSlides(n) {
     slides[slideIndex - 1].classList.add('show');
     dots[slideIndex - 1] !== undefined ? dots[slideIndex - 1].className += " active" : '';
 
-
 }
+
+showSlides(slideIndex);

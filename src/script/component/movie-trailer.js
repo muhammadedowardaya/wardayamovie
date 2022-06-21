@@ -40,7 +40,7 @@ class MovieTrailer extends HTMLElement {
                 display: ${this._display};
                 flex-direction: column;
                 position: fixed;
-                top:9%;
+                top:15%;
                 left:3%;
                 background: #6639A6;
                 height: max-content;
