@@ -6,7 +6,7 @@
     "scripts": {
         "build": "webpack --config webpack.prod.js",
         "start-dev": "webpack serve --config webpack.dev.js",
-        "start": "npm run build"
+        "heroku-postbuild": "npm run build"
     },
     "author": "muhammad edo wardaya",
     "license": "ISC",
