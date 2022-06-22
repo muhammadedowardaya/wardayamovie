@@ -177,7 +177,7 @@ class MovieTrailer extends HTMLElement {
                 #container {
                     left:1%;
                     width: 86vw;
-                    top: 9vh;
+                    top: 11vh;
                     overflow-y:scroll;
                 }
             }
