@@ -80,6 +80,16 @@ class CardMovie extends HTMLElement {
                     margin-top: 10px;
                 }
 
+                @media only screen and (max-width: 500px){
+                    .info h4 {
+                        font-size:14px;
+                    }
+
+                    .info p {
+                        font-size:12px;
+                    }
+                }
+
             </style>
 
             <div class="card-movie" data-id='${this._id}'>

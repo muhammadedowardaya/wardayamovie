@@ -12,7 +12,7 @@ class MovieTrailer extends HTMLElement {
         this.render();
     }
 
-    set clickClose(value){
+    set clickClose(value) {
         this._clickClose = value;
         this.render();
     }
@@ -22,7 +22,7 @@ class MovieTrailer extends HTMLElement {
         this.render();
     }
 
-    set display(value){
+    set display(value) {
         this._display = value;
         this.render();
     }
@@ -36,11 +36,11 @@ class MovieTrailer extends HTMLElement {
         this._shadowRoot.innerHTML = `
 
         <style>
-            #watching-movie {
+            #container {
                 display: ${this._display};
                 flex-direction: column;
                 position: fixed;
-                top:15%;
+                top:8%;
                 left:3%;
                 background: #6639A6;
                 height: max-content;
@@ -50,6 +50,10 @@ class MovieTrailer extends HTMLElement {
                 border-bottom-left-radius: 20px;
                 border-bottom-right-radius: 20px;
                 border-top-right-radius: 20px;
+            }
+
+            #watching-movie {
+                overflow-y:scroll;
             }
 
             h1 {
@@ -76,8 +80,7 @@ class MovieTrailer extends HTMLElement {
             }
             
             iframe {
-                max-height:30vh;
-                flex-basis:50%;
+                flex-basis:80%;
                 border-top-left-radius: 20px;
                 border-bottom-left-radius: 20px;
                 border-bottom-right-radius: 20px;
@@ -93,69 +96,111 @@ class MovieTrailer extends HTMLElement {
                 font-size:18px;
             }
 
+
             @media only screen and (min-width: 1000px){
-                iframe {
-                    min-height:50vh;
+                #container {
+                    min-height: 46vh;
+                    top:10%;
                 }
 
-               
+                .watching-movie {
+                    height: 36vh;
+                }
             }
-
             @media only screen and (max-width: 800px){
-                iframe {
-                    flex-basis:100%;
-                    min-height:43vh;
-                }
 
                 .info {
                     flex-basis:100%;
+                }
+
+                .info p {
+                    height: 13vh;
+                    overflow-y: scroll;
                 }
 
                 .watching-movie {
                     flex-direction:column;
                 }
 
-                #watching-movie {
-                    left:2%;
+                #container {
+                    left: 2%;
+                    height: 42vh;
+                    overflow-y: scroll;
                 }
             }
 
              @media only screen and (max-width: 650px){
-                iframe {
-                    flex-basis:100%;
-                    min-height:43vh;
-                }
 
                 .info {
                     flex-basis:100%;
+                }
+
+                .info h2 {
+                    margin:10px 0;
+                }
+
+                .info p {
+                    font-size:12px;
                 }
 
                 .watching-movie {
                     flex-direction:column;
                 }
 
-                #watching-movie {
+                #container {
+                    left: 3vw;
+                    top: 9%;
+                    height: max-content;
+                    width: 86vw;
+                    overflow-y:scroll;
+                }
+            }
+
+            @media only screen and (max-width: 400px){
+
+                .info {
+                    flex-basis:100%;
+                }
+
+                .info p {
+                    font-size:12px;
+                }
+
+                h2 {
+                    margin:10px 0;
+                }
+
+                .watching-movie {
+                    flex-direction:column;
+                }
+
+                #container {
                     left:1%;
+                    width: 86vw;
+                    top: 9vh;
+                    overflow-y:scroll;
                 }
             }
         </style>
 
-        <section id="watching-movie">
+        <div id="container">
             <h1 class="mb-3">Movie Trailers</h1>
-            <div class="watching-movie">
-                <iframe
-                    src="${this._urlVideo}">
-                </iframe>
-                <div class="info">
-                    <h2>Overview</h2>
-                    <p>${this._overview}</p>
+            <section id="watching-movie">
+                <div class="watching-movie">
+                    <iframe
+                        src="${this._urlVideo}">
+                    </iframe>
+                    <div class="info">
+                        <h2>Overview</h2>
+                        <p>${this._overview}</p>
+                    </div>
                 </div>
-            </div>
+            </section>
             <a type="button" id="close">Close</a>
-        </section>
+        </div>
         `;
 
-        this._shadowRoot.querySelector('#close').addEventListener('click',this._clickClose);
+        this._shadowRoot.querySelector('#close').addEventListener('click', this._clickClose);
     }
 }
 

@@ -64,6 +64,7 @@ const main = () => {
         div.classList.add('col-lg-3');
         div.classList.add('col-md-4');
         div.classList.add('col-sm-6');
+        div.classList.add('col-6');
 
         div.appendChild(movie);
         container.appendChild(div);
