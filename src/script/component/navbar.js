@@ -20,13 +20,13 @@ class Navbar extends HTMLElement {
                             <a class="nav-link active" aria-current="page" href="#trending">Trending</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="#upcoming">Upcoming</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#popular">Popular</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#top_rated">Top Rated</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#upcoming">Upcoming</a>
+                        <a class="nav-link" href="#top_rated">Top Rated</a>
                         </li>
                     </ul>
                 </div>

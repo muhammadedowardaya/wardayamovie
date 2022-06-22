@@ -99,88 +99,82 @@ class MovieTrailer extends HTMLElement {
 
             @media only screen and (min-width: 1000px){
                 #container {
-                    min-height: 46vh;
-                    top:10%;
-                }
-
-                .watching-movie {
-                    height: 36vh;
-                }
+                left: 3%;
+                height: 70vh;
             }
-            @media only screen and (max-width: 800px){
-
-                .info {
-                    flex-basis:100%;
-                }
-
-                .info p {
-                    height: 13vh;
-                    overflow-y: scroll;
-                }
-
-                .watching-movie {
-                    flex-direction:column;
-                }
-
-                #container {
-                    left: 2%;
-                    height: 42vh;
-                    overflow-y: scroll;
-                }
+            .watching-movie {
+                height:70vh;
+                flex-direction: column;
+                overflow-y:scroll;
             }
+        }
+        
+        @media only screen and (max-width: 800px){
 
-             @media only screen and (max-width: 650px){
+            #container {
+                left: 2%;
+                height: 60vh;
+                width:88vw;
+            }
+            .watching-movie {
+                height:60vh;
+                flex-direction: column;
+            }
+        }
 
-                .info {
-                    flex-basis:100%;
-                }
+            @media only screen and (max-width: 500px){
 
-                .info h2 {
-                    margin:10px 0;
-                }
 
-                .info p {
-                    font-size:12px;
-                }
-
-                .watching-movie {
-                    flex-direction:column;
-                }
-
-                #container {
-                    left: 3vw;
-                    top: 9%;
-                    height: max-content;
-                    width: 86vw;
-                    overflow-y:scroll;
-                }
+            .info h2 {
+                margin:16px 0;
             }
 
-            @media only screen and (max-width: 400px){
-
-                .info {
-                    flex-basis:100%;
-                }
-
-                .info p {
-                    font-size:12px;
-                }
-
-                h2 {
-                    margin:10px 0;
-                }
-
-                .watching-movie {
-                    flex-direction:column;
-                }
-
-                #container {
-                    left:1%;
-                    width: 86vw;
-                    top: 11vh;
-                    overflow-y:scroll;
-                }
+            .info p {
+                font-size:14px;
             }
+
+            #container {
+                left: 1vw;
+                top: 9%;
+                height: 70vh;
+                width: 88vw;
+            }
+
+            
+            .watching-movie {
+                height:70vh;
+                flex-direction: column;
+            }
+                            
+        }
+
+        @media only screen and (max-width: 400px){
+            
+            .info p {
+                font-size:12px;
+            }
+
+            h2 {
+                margin:10px 0;
+            }
+
+            #container {
+                left:1%;
+                width: 87vw;
+                top: 11vh;
+                height:60vh;
+            }
+            
+            #watching-movie {
+                height: inherit;
+            }
+            
+            .watching-movie {
+                height:60vh;
+                flex-direction: column;
+            }              
+            
+        }
         </style>
 
         <div id="container">

@@ -81,7 +81,7 @@ class CardMovie extends HTMLElement {
                 }
 
                 @media only screen and (max-width: 500px){
-                    .info h4 {
+                    .info h4 , .info a{
                         font-size:14px;
                     }
 

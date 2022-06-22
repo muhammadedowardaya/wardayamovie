@@ -81,16 +81,16 @@ footer {
     background: #3490DE;
     color: #fff;
     padding: 20px 1vh;
-    font-size: 1.5vw;
-    margin:0;
+    font-size: 1.1vh;
+    margin: 0;
 }
 
 footer p {
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
 }
 
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 400px) {
     .jumbotron h1 {
         font-size: 24px;
     }
@@ -100,12 +100,13 @@ footer p {
     }
 }
 
-@media only screen and (min-width: 650px){
+@media only screen and (max-width: 650px) {
     .jumbotron {
-        padding-top:0;
+        padding-top: 0;
     }
+
     .slideshow-container {
-        height: 39vh
+        height: 37vh;
     }
 
     .jumbotron h1 {
@@ -113,8 +114,8 @@ footer p {
     }
 }
 
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 900px) {
     .jumbotron {
-        padding-top:0;
+        padding-top: 0;
     }
 }
